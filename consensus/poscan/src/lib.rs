@@ -922,12 +922,12 @@ pub fn start_mining_worker<Block, C, S, Algorithm, E, SO, L, CIDP, CAW>(
 			let block_id = BlockId::Hash(info.finalized_hash);
 			let num = client.block_number_from_id(&block_id).unwrap().unwrap();
 
-			if num + 3u32.into() < *best_num {
+			if num + 5u32.into() < *best_num {
 				warn!(
 					target: "pow",
 					"Skipping proposal. Too far from best_block",
 				);
-				continue;
+				//continue;
 			}
 
 			if let Err(err) = can_author_with.can_author_with(&BlockId::Hash(best_hash)) {
