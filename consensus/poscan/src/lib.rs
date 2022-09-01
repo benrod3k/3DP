@@ -478,7 +478,7 @@ impl<B, I, C, S, Algorithm, CAW, CIDP> BlockImport<B> for PowBlockImport<B, I, C
 
 		if fin_num + 3u32.into() < *best_num {
 			error!(">>> Too far from finalized block");
-			return Err(Error::<B>::CheckFinalized.into())
+			// return Err(Error::<B>::CheckFinalized.into())
 		}
 
 		let parent_hash = *block.header.parent_hash();
